@@ -8,19 +8,18 @@
   "browser": "dist/html2canvas.js",
   "version": "1.0.0-rc.5",
   "author": {
-    "name": "Niklas von Hertzen",
-    "email": "niklasvh@gmail.com",
-    "url": "https://hertzen.com"
+    "name": "Thom Root",
+    "email": "thomaslroot@gmail.com"
   },
   "engines": {
     "node": ">=8.0.0"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:niklasvh/html2canvas.git"
+    "url": "git@github.com:invisime/html2canvas.git"
   },
   "bugs": {
-    "url": "https://github.com/niklasvh/html2canvas/issues"
+    "url": "https://github.com/invisime/html2canvas/issues"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.3",
@@ -91,7 +90,7 @@
     "webpack-cli": "^3.3.0"
   },
   "scripts": {
-    "prebuild": "rimraf dist/ && rimraf build/ && mkdirp dist && mkdirp build",
+    "prebuild": "rimraf dist/ && rimraf build/ && mkdirp dist && mkdirp build && npm run build",
     "build": "tsc --module commonjs && rollup -c rollup.config.ts && npm run build:create-reftest-list && npm run build:testrunner && npm run build:minify",
     "build:testrunner": "rollup -c tests/rollup.config.ts",
     "build:minify": "uglifyjs --compress --comments /^!/ -o dist/html2canvas.min.js --mangle -- dist/html2canvas.js",
